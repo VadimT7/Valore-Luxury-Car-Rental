@@ -93,7 +93,10 @@ coverage
 # Yarn Integrity file
 .yarn-integrity
 
-
+# dotenv environment variable files
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
