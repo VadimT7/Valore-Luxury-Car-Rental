@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { router, protectedProcedure } from '@valore/lib/api/trpc'
+import { router, protectedProcedure } from '@valore/lib'
 import { prisma } from '@valore/database'
 import { 
   createSetupIntent, 

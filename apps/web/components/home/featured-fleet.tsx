@@ -12,49 +12,67 @@ import { staggerContainer, staggerItem } from '@valore/ui'
 const featuredCars = [
   {
     id: '1',
-    slug: 'lamborghini-huracan-evo-spyder',
-    make: 'Lamborghini',
-    model: 'Huracán EVO',
-    displayName: 'Lamborghini Huracán EVO Spyder',
+    slug: 'bmw-m8-competition',
+    make: 'BMW',
+    model: 'M8 Competition',
+    displayName: 'BMW M8 Competition',
     year: 2024,
     category: 'SUPERCAR',
-    pricePerDay: 2500,
-    image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&h=600&fit=crop',
+    pricePerDay: 550,
+    image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
     specs: {
-      power: '610 HP',
-      acceleration: '3.1s',
-      topSpeed: '325 km/h',
+      power: '617 HP',
+      acceleration: '3.2s',
+      topSpeed: '305 km/h',
     },
     rating: 5.0,
     featured: true,
   },
   {
     id: '2',
-    slug: 'ferrari-f8-tributo',
-    make: 'Ferrari',
-    model: 'F8 Tributo',
-    displayName: 'Ferrari F8 Tributo',
-    year: 2023,
-    category: 'SUPERCAR',
-    pricePerDay: 3000,
-    image: 'https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=800&h=600&fit=crop',
+    slug: 'audi-s5',
+    make: 'Audi',
+    model: 'S5',
+    displayName: 'Audi S5',
+    year: 2024,
+    category: 'COUPE',
+    pricePerDay: 350,
+    image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
     specs: {
-      power: '710 HP',
-      acceleration: '2.9s',
-      topSpeed: '340 km/h',
+      power: '349 HP',
+      acceleration: '4.4s',
+      topSpeed: '250 km/h',
+    },
+    rating: 4.9,
+    featured: true,
+  },
+  {
+    id: '3',
+    slug: 'audi-rs5',
+    make: 'Audi',
+    model: 'RS5',
+    displayName: 'Audi RS5',
+    year: 2024,
+    category: 'COUPE',
+    pricePerDay: 450,
+    image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
+    specs: {
+      power: '444 HP',
+      acceleration: '3.9s',
+      topSpeed: '280 km/h',
     },
     rating: 5.0,
     featured: true,
   },
   {
-    id: '3',
+    id: '4',
     slug: 'mercedes-amg-g63',
     make: 'Mercedes-AMG',
     model: 'G63',
     displayName: 'Mercedes-AMG G63',
     year: 2024,
     category: 'SUV',
-    pricePerDay: 1500,
+    pricePerDay: 800,
     image: 'https://images.unsplash.com/photo-1615397349754-cfa2066a298e?w=800&h=600&fit=crop',
     specs: {
       power: '577 HP',
@@ -62,6 +80,42 @@ const featuredCars = [
       topSpeed: '240 km/h',
     },
     rating: 4.9,
+    featured: true,
+  },
+  {
+    id: '5',
+    slug: 'bmw-x4m-competition',
+    make: 'BMW',
+    model: 'X4M Competition',
+    displayName: 'BMW X4M Competition',
+    year: 2024,
+    category: 'SUV',
+    pricePerDay: 400,
+    image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
+    specs: {
+      power: '503 HP',
+      acceleration: '4.1s',
+      topSpeed: '270 km/h',
+    },
+    rating: 4.8,
+    featured: true,
+  },
+  {
+    id: '6',
+    slug: 'lamborghini-huracan',
+    make: 'Lamborghini',
+    model: 'Huracán',
+    displayName: 'Lamborghini Huracán',
+    year: 2024,
+    category: 'SUPERCAR',
+    pricePerDay: 850,
+    image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&h=600&fit=crop',
+    specs: {
+      power: '610 HP',
+      acceleration: '3.1s',
+      topSpeed: '325 km/h',
+    },
+    rating: 5.0,
     featured: true,
   },
 ]
@@ -95,65 +149,78 @@ export function FeaturedFleet() {
               <Card
                 hoverable
                 className="group overflow-hidden h-full"
-                padding="none"
               >
-                {/* Image */}
-                <div className="relative aspect-car overflow-hidden">
+                {/* Image/Video */}
+                <div className="relative aspect-car overflow-hidden bg-gradient-to-br from-neutral-900 to-neutral-800">
                   <Image
-                    src={car.image}
+                    src={car.id === '1' ? 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop' : car.image}
                     alt={car.displayName}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
-                  {/* Price tag */}
-                  <div className="absolute top-4 right-4 bg-black/80 backdrop-blur-sm px-4 py-2 rounded-full">
-                    <p className="text-white font-mono">
-                      {formatCurrency(car.pricePerDay)}<span className="text-sm opacity-75">/day</span>
+                  {/* Luxury gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                  
+                  {/* Shimmer effect on hover */}
+                  <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700">
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+                  </div>
+                  
+                  {/* Price tag - Enhanced */}
+                  <div className="absolute top-4 right-4 bg-black/90 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 shadow-2xl">
+                    <p className="text-white font-mono font-bold">
+                      {formatCurrency(car.pricePerDay)}<span className="text-sm opacity-75 font-normal">/day</span>
                     </p>
                   </div>
                   
-                  {/* Category badge */}
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <p className="text-xs font-medium tracking-wider uppercase">{car.category}</p>
+                  {/* Category badge - Enhanced */}
+                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/20 shadow-lg">
+                    <p className="text-xs font-bold tracking-wider uppercase text-neutral-800">{car.category}</p>
+                  </div>
+
+                  {/* Rating badge */}
+                  <div className="absolute bottom-4 left-4 bg-primary/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-primary/20 shadow-lg">
+                    <div className="flex items-center gap-1">
+                      <Star className="h-3 w-3 text-white fill-white" />
+                      <span className="text-xs font-bold text-white">{car.rating}</span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Content */}
-                <div className="p-6">
-                  <div className="mb-4">
-                    <p className="text-sm text-neutral-600 mb-1">{car.make}</p>
-                    <h3 className="text-2xl font-display">{car.model}</h3>
-                    <p className="text-sm text-neutral-600 mt-1">{car.year}</p>
+                {/* Content - Enhanced */}
+                <div className="p-6 bg-white">
+                  <div className="mb-6">
+                    <p className="text-sm text-neutral-500 mb-2 font-medium tracking-wide">{car.make}</p>
+                    <h3 className="text-2xl font-display font-bold text-neutral-900 mb-1">{car.model}</h3>
+                    <p className="text-sm text-neutral-500 font-medium">{car.year}</p>
                   </div>
 
-                  {/* Specs */}
-                  <div className="grid grid-cols-3 gap-4 mb-6 pb-6 border-b border-neutral-200">
-                    <div>
-                      <p className="text-xs text-neutral-600 mb-1">Power</p>
-                      <p className="font-medium">{car.specs.power}</p>
+                  {/* Specs - Enhanced */}
+                  <div className="grid grid-cols-3 gap-4 mb-6 pb-6 border-b border-neutral-100">
+                    <div className="text-center">
+                      <p className="text-xs text-neutral-500 mb-1 font-medium tracking-wide">Power</p>
+                      <p className="font-bold text-neutral-900">{car.specs.power}</p>
                     </div>
-                    <div>
-                      <p className="text-xs text-neutral-600 mb-1">0-100</p>
-                      <p className="font-medium">{car.specs.acceleration}</p>
+                    <div className="text-center">
+                      <p className="text-xs text-neutral-500 mb-1 font-medium tracking-wide">0-100</p>
+                      <p className="font-bold text-neutral-900">{car.specs.acceleration}</p>
                     </div>
-                    <div>
-                      <p className="text-xs text-neutral-600 mb-1">Top Speed</p>
-                      <p className="font-medium">{car.specs.topSpeed}</p>
+                    <div className="text-center">
+                      <p className="text-xs text-neutral-500 mb-1 font-medium tracking-wide">Top Speed</p>
+                      <p className="font-bold text-neutral-900">{car.specs.topSpeed}</p>
                     </div>
                   </div>
 
-                  {/* Footer */}
+                  {/* Footer - Enhanced */}
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-1">
-                      <Star className="h-4 w-4 text-primary fill-primary" />
-                      <span className="text-sm font-medium">{car.rating}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm font-medium group-hover:text-primary transition-colors">
+                    <div className="flex items-center gap-2 text-sm font-semibold text-neutral-700 group-hover:text-primary transition-colors duration-300">
                       View Details
-                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 duration-300" />
+                    </div>
+                    <div className="w-8 h-8 bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
+                      <ArrowRight className="h-4 w-4 text-white" />
                     </div>
                   </div>
                 </div>
@@ -171,9 +238,13 @@ export function FeaturedFleet() {
         className="text-center mt-12"
       >
         <Link href="/fleet">
-          <Button size="lg" variant="outline">
+          <Button 
+            size="xl"
+            rightIcon={<ArrowRight className="h-6 w-6" />}
+            className="min-w-[250px] bg-neutral-900 hover:bg-black text-white shadow-luxury hover:shadow-luxury-hover border-0"
+            shimmer
+          >
             Explore Full Fleet
-            <ArrowRight className="ml-2 h-4 w-4" />
           </Button>
         </Link>
       </motion.div>

@@ -315,33 +315,7 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* Map Section */}
-      <div className="bg-slate-900/50 py-16">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-2xl font-bold text-white mb-4">Visit Our Showroom</h2>
-            <p className="text-slate-300 max-w-2xl mx-auto">
-              Located in the heart of Montreal, our premium showroom showcases the finest collection 
-              of luxury vehicles. Schedule a visit to experience our fleet in person.
-            </p>
-          </motion.div>
 
-          <div className="bg-slate-800 rounded-2xl p-8 border border-slate-700">
-            <div className="aspect-video bg-slate-700 rounded-lg flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="w-16 h-16 text-slate-500 mx-auto mb-4" />
-                <p className="text-slate-400">Interactive Map Coming Soon</p>
-                <p className="text-sm text-slate-500 mt-2">Montreal, Quebec, Canada</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   )
 }

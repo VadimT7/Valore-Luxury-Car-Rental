@@ -45,21 +45,20 @@ export function CTASection() {
               <Link href="/fleet">
                 <Button 
                   size="xl" 
-                  className="bg-white text-black hover:bg-neutral-100 min-w-[200px]"
+                  className="min-w-[220px] bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white shadow-luxury hover:shadow-luxury-hover border-0"
                   shimmer
+                  rightIcon={<ArrowRight className="h-6 w-6" />}
                 >
                   Browse Fleet
-                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               
               <a href="tel:+1234567890">
                 <Button 
                   size="xl" 
-                  variant="outline" 
-                  className="border-white text-white hover:bg-white hover:text-black min-w-[200px]"
+                  className="bg-white/10 backdrop-blur-sm border-2 border-white text-white hover:bg-white hover:text-black min-w-[200px] shadow-lg hover:shadow-xl transition-all duration-300"
+                  rightIcon={<Phone className="h-5 w-5" />}
                 >
-                  <Phone className="mr-2 h-5 w-5" />
                   Call Concierge
                 </Button>
               </a>
@@ -79,7 +78,7 @@ export function CTASection() {
                   <p className="text-sm text-neutral-400">Happy Clients</p>
                 </div>
                 <div>
-                  <p className="text-3xl font-display mb-2">15+</p>
+                  <p className="text-3xl font-display mb-2">5+</p>
                   <p className="text-sm text-neutral-400">Luxury Brands</p>
                 </div>
                 <div>

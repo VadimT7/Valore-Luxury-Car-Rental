@@ -19,12 +19,12 @@ const experiences = [
   {
     icon: MapPin,
     title: 'Worldwide Delivery',
-    description: 'We deliver to your location anywhere in Europe within 24 hours',
+    description: 'We deliver to your location anywhere in Québec within 24 hours',
   },
   {
     icon: Sparkles,
     title: 'Bespoke Services',
-    description: 'Personal chauffeur, photographer, and curated driving experiences',
+    description: 'Extras: Personal chauffeur, photographer, and curated driving experiences',
   },
 ]
 
@@ -75,7 +75,7 @@ export function ExperienceSection() {
             </motion.div>
           </motion.div>
 
-          {/* Image */}
+          {/* Video */}
           <motion.div
             initial={{ opacity: 0, x: 100 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -83,15 +83,18 @@ export function ExperienceSection() {
             transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
             className="relative"
           >
-            <div className="relative aspect-[4/5] rounded-2xl overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&h=1000&fit=crop"
-                alt="Luxury car interior"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+            <div className="relative aspect-[9/16] rounded-2xl overflow-hidden">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source src="/CarsValoreRental.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             </div>
             
             {/* Floating card */}

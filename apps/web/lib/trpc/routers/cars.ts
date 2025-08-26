@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { router, publicProcedure } from '@valore/lib/api/trpc'
+import { router, publicProcedure } from '@valore/lib'
 import { prisma } from '@valore/database'
 import { TRPCError } from '@trpc/server'
 import { getAvailableCars, getCarAvailabilityCalendar } from '@valore/lib/booking/availability'

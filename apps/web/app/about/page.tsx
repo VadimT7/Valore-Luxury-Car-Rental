@@ -20,10 +20,10 @@ import { Button } from '@valore/ui'
 import { staggerContainer, staggerItem } from '@valore/ui'
 
 const stats = [
-  { icon: Car, value: '50+', label: 'Luxury Vehicles' },
+  { icon: Car, value: '10+', label: 'Luxury Vehicles' },
   { icon: Users, value: '1000+', label: 'Happy Clients' },
   { icon: Star, value: '5.0', label: 'Customer Rating' },
-  { icon: Award, value: '10+', label: 'Years Experience' },
+  { icon: Award, value: '3+', label: 'Years Experience' },
 ]
 
 const values = [
@@ -102,8 +102,9 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 py-20">
-        <div className="absolute inset-0 bg-black/20" />
+      <div className="relative bg-gradient-to-r from-black via-slate-900 to-black py-20">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-transparent to-black/70" />
         <div className="relative container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -112,7 +113,7 @@ export default function AboutPage() {
             className="text-center"
           >
             <h1 className="heading-large text-white mb-4">About Valore Rental</h1>
-            <p className="text-xl text-slate-200 max-w-3xl mx-auto">
+            <p className="text-xl text-neutral-300 max-w-3xl mx-auto font-light">
               Montreal's premier luxury car rental service, delivering exceptional experiences 
               with the world's most prestigious vehicles since 2014.
             </p>
@@ -341,11 +342,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-black via-slate-900 to-amber-900 relative overflow-hidden">
-        {/* Golden overlay pattern */}
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-500/10 via-transparent to-amber-500/10" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(251,191,36,0.1),transparent_50%)]" />
-        
+      <section className="py-20 bg-gradient-to-br from-black via-slate-900 to-black relative overflow-hidden">
         <div className="container mx-auto px-4 text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -354,15 +351,15 @@ export default function AboutPage() {
             transition={{ duration: 0.6 }}
           >
             <h2 className="heading-medium text-white mb-4 drop-shadow-lg">Ready to Experience Luxury?</h2>
-            <p className="text-xl text-amber-100 mb-8 max-w-2xl mx-auto drop-shadow-md">
+            <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto drop-shadow-md">
               Join thousands of satisfied clients who have experienced the Valore difference. 
               Book your luxury vehicle today and discover why we're Montreal's premier choice.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-amber-500 hover:bg-amber-600 text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button size="lg" className="bg-white hover:bg-slate-100 text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                 Explore Our Fleet
               </Button>
-              <Button size="lg" className="border-2 border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+              <Button size="lg" className="border-2 border-white text-white hover:bg-white hover:text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
                 Contact Us
               </Button>
             </div>

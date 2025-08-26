@@ -1,5 +1,4 @@
 import { initTRPC, TRPCError } from '@trpc/server'
-import { type CreateNextContextOptions } from '@trpc/server/adapters/next'
 import { type Session } from 'next-auth'
 import superjson from 'superjson'
 import { ZodError } from 'zod'
@@ -22,8 +21,8 @@ export const createInnerTRPCContext = (opts: CreateContextOptions) => {
 /**
  * This is the actual context you'll use in your router.
  */
-export const createTRPCContext = async (opts: CreateNextContextOptions) => {
-  const { req, res } = opts
+export const createTRPCContext = async (opts: { req: Request }) => {
+  const { req } = opts
 
   // Get the session from the server using the unstable_getServerSession wrapper
   const session = null // TODO: Implement getServerAuthSession

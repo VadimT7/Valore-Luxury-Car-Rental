@@ -2,7 +2,7 @@ import { fetchRequestHandler } from '@trpc/server/adapters/fetch'
 import { type NextRequest } from 'next/server'
 
 import { appRouter } from '@/lib/trpc/routers/_app'
-import { createTRPCContext } from '@valore/lib/api/trpc'
+import { createTRPCContext } from '@valore/lib'
 
 const handler = (req: NextRequest) =>
   fetchRequestHandler({

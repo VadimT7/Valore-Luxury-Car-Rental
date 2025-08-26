@@ -1,4 +1,4 @@
-import { router } from '@valore/lib/api/trpc'
+import { router } from '@valore/lib'
 import { carsRouter } from './cars'
 import { bookingsRouter } from './bookings'
 import { usersRouter } from './users'

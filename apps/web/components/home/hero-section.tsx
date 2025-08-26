@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '@valore/ui'
 import { cn } from '@valore/ui'
@@ -119,16 +119,14 @@ export function HeroSection() {
                     <Button
                       className="bg-white text-black hover:bg-neutral-100 h-14 px-10 text-base"
                       shimmer
+                      rightIcon={<ArrowRight className="h-5 w-5" />}
                     >
-                      Explore Fleet
+                      Book Now
+
+
+                      
                     </Button>
                   </Link>
-                  <Button
-                    variant="outline"
-                    className="border-white text-white hover:bg-white hover:text-black h-14 px-10 text-base"
-                  >
-                    Book Now
-                  </Button>
                 </motion.div>
               </motion.div>
             </AnimatePresence>

@@ -101,6 +101,91 @@ pnpm db:seed
 pnpm dev
 ```
 
+## 🚀 Deployment
+
+### Deploy to Vercel
+
+The easiest way to deploy Valore Rental is using Vercel:
+
+#### Option 1: Using Deployment Scripts (Recommended)
+
+**Windows (PowerShell)**:
+```powershell
+.\scripts\deploy-vercel.ps1
+```
+
+**Linux/macOS (Bash)**:
+```bash
+chmod +x scripts/deploy-vercel.sh
+./scripts/deploy-vercel.sh
+```
+
+#### Option 2: Manual Deployment
+
+1. **Install Vercel CLI**:
+   ```bash
+   npm i -g vercel
+   ```
+
+2. **Login to Vercel**:
+   ```bash
+   vercel login
+   ```
+
+3. **Deploy**:
+   ```bash
+   vercel --prod
+   ```
+
+#### Option 3: GitHub Integration
+
+1. Push your code to GitHub
+2. Connect your repository to Vercel
+3. Configure environment variables in Vercel dashboard
+4. Deploy automatically on push
+
+### Environment Variables
+
+Before deploying, ensure you have all required environment variables:
+
+```bash
+# Database
+DATABASE_URL=your_postgresql_connection_string
+
+# Authentication
+NEXTAUTH_SECRET=your_nextauth_secret
+NEXTAUTH_URL=https://your-domain.vercel.app
+
+# Stripe
+STRIPE_SECRET_KEY=sk_live_...
+STRIPE_PUBLISHABLE_KEY=pk_live_...
+STRIPE_WEBHOOK_SECRET=whsec_...
+
+# Email (Resend)
+RESEND_API_KEY=re_...
+
+# File Storage (Cloudflare R2)
+R2_ACCESS_KEY_ID=...
+R2_SECRET_ACCESS_KEY=...
+R2_BUCKET_NAME=valore-rental-assets
+R2_ENDPOINT=https://...
+```
+
+### Post-Deployment Setup
+
+1. **Database Migration**:
+   ```bash
+   pnpm db:migrate:deploy
+   pnpm db:seed
+   ```
+
+2. **Configure External Services**:
+   - Update Stripe webhook endpoints
+   - Configure Resend domain verification
+   - Set up Twilio webhook URLs
+
+For detailed deployment instructions, see [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
+
 ### Accessing the Applications
 
 - **Customer Web App**: http://localhost:3000

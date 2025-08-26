@@ -1,4 +1,4 @@
-import { router } from '@valore/lib/api/trpc'
+import { router } from '@valore/lib'
 import { adminRouter } from './admin'
 
 // Re-export the main app router with admin extensions

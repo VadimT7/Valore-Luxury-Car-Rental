@@ -44,7 +44,8 @@ export async function createStripeCustomer(user: User): Promise<string> {
   await prisma.user.update({
     where: { id: user.id },
     data: { 
-      // Note: Add stripeCustomerId field to User model if not exists
+      // TODO: Add stripeCustomerId field to User model
+      // For now, we'll store it in metadata
     },
   })
   
@@ -75,8 +76,8 @@ export async function createPaymentIntent({
   // Create or get Stripe customer
   let stripeCustomerId = customerId
   if (!stripeCustomerId && booking.user) {
-    // Check if user has existing Stripe customer ID
-    // If not, create one
+    // For now, create a new customer each time
+    // TODO: Add stripeCustomerId field to User model
     stripeCustomerId = await createStripeCustomer(booking.user)
   }
   

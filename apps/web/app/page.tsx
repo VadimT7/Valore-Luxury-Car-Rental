@@ -2,6 +2,7 @@ import { Suspense } from 'react'
 import { HeroSection } from '@/components/home/hero-section'
 import { FeaturedFleet } from '@/components/home/featured-fleet'
 import { ExperienceSection } from '@/components/home/experience-section'
+import { VideoShowcase } from '@/components/home/video-showcase'
 import { TestimonialsSection } from '@/components/home/testimonials-section'
 import { ServicesSection } from '@/components/home/services-section'
 import { CTASection } from '@/components/home/cta-section'
@@ -34,6 +35,9 @@ export default function HomePage() {
       
       {/* Experience section */}
       <ExperienceSection />
+      
+      {/* Video Showcase */}
+      <VideoShowcase />
       
       {/* Services */}
       <ServicesSection />
