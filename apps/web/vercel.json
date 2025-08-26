@@ -3,8 +3,7 @@
   "buildCommand": "cd ../.. && pnpm build:web",
   "installCommand": "cd ../.. && pnpm install",
   "framework": "nextjs",
-  "outputDirectory": ".next",
-  "rootDirectory": "../..",
+  "outputDirectory": ".next", 
   "functions": {
     "app/api/**/*.ts": {
       "maxDuration": 30
