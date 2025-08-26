@@ -1,5 +1,5 @@
-import { prisma, type Car, type Booking, type Availability } from '@valore/database'
-import { startOfDay, endOfDay, eachDayOfInterval, isBefore, isAfter, isEqual } from 'date-fns'
+import { prisma, type Car } from '@valore/database'
+import { startOfDay, eachDayOfInterval, isBefore, isAfter, isEqual } from 'date-fns'
 
 export interface AvailabilityCheckParams {
   carId: string

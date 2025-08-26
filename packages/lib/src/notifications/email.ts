@@ -1,8 +1,9 @@
 import { Resend } from 'resend'
-import { prisma, type Booking, type User, type NotificationType } from '@valore/database'
+import { prisma } from '@valore/database'
 import { format } from 'date-fns'
 
-const resend = new Resend(process.env.RESEND_API_KEY!)
+// Initialize Resend with a dummy key if not provided (for build purposes)
+const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy_key_for_build')
 
 export interface EmailTemplate {
   subject: string
@@ -27,11 +28,11 @@ export interface SendEmailParams {
 export async function sendEmail({
   to,
   template,
-  replyTo = process.env.EMAIL_REPLY_TO!,
+  replyTo = process.env.EMAIL_REPLY_TO || 'noreply@example.com',
   attachments = [],
 }: SendEmailParams): Promise<string> {
   const { data, error } = await resend.emails.send({
-    from: process.env.EMAIL_FROM!,
+    from: process.env.EMAIL_FROM || 'noreply@example.com',
     to: Array.isArray(to) ? to : [to],
     subject: template.subject,
     html: template.html,

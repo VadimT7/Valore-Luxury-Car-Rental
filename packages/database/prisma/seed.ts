@@ -1,5 +1,4 @@
-import { PrismaClient, Role, CarCategory, BodyType, TransmissionType, FuelType, DrivetrainType, AddOnCategory, PriceType, UserStatus, CarStatus, DiscountType } from '@prisma/client'
-import bcrypt from 'bcryptjs'
+import { PrismaClient, Role, CarCategory, BodyType, TransmissionType, FuelType, DrivetrainType, AddOnCategory, PriceType, UserStatus, DiscountType } from '@prisma/client'
 import { faker } from '@faker-js/faker'
 
 const prisma = new PrismaClient()
@@ -509,8 +508,7 @@ async function main() {
 
   // Create admin user
   console.log('👤 Creating admin user...')
-  const hashedPassword = await bcrypt.hash('admin123', 10)
-  const adminUser = await prisma.user.create({
+  await prisma.user.create({
     data: {
       email: 'admin@valorrental.com',
       name: 'Admin User',

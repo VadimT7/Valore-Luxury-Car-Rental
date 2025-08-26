@@ -1,4 +1,4 @@
-import { prisma, type PriceRule, type SeasonalRate, type AddOn, type Coupon } from '@valore/database'
+import { prisma, type Coupon } from '@valore/database'
 import { differenceInDays, isWeekend, startOfDay } from 'date-fns'
 import Decimal from 'decimal.js'
 

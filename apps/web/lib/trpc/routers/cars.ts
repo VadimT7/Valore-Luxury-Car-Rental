@@ -2,7 +2,7 @@ import { z } from 'zod'
 import { router, publicProcedure } from '@valore/lib'
 import { prisma } from '@valore/database'
 import { TRPCError } from '@trpc/server'
-import { getAvailableCars, getCarAvailabilityCalendar } from '@valore/lib/booking/availability'
+import { getAvailableCars, getCarAvailabilityCalendar } from '@valore/lib'
 
 export const carsRouter = router({
   // Get all cars with optional filters
@@ -54,12 +54,10 @@ export const carsRouter = router({
           priceRules: {
             where: {
               isActive: true,
-              validUntil: {
-                OR: [
-                  { equals: null },
-                  { gte: new Date() },
-                ],
-              },
+              OR: [
+                { validUntil: null },
+                { validUntil: { gte: new Date() } },
+              ],
             },
             orderBy: { validFrom: 'desc' },
             take: 1,
@@ -119,12 +117,10 @@ export const carsRouter = router({
           priceRules: {
             where: {
               isActive: true,
-              validUntil: {
-                OR: [
-                  { equals: null },
-                  { gte: new Date() },
-                ],
-              },
+              OR: [
+                { validUntil: null },
+                { validUntil: { gte: new Date() } },
+              ],
             },
             include: {
               seasonalRates: {
@@ -190,12 +186,10 @@ export const carsRouter = router({
           priceRules: {
             where: {
               isActive: true,
-              validUntil: {
-                OR: [
-                  { equals: null },
-                  { gte: new Date() },
-                ],
-              },
+              OR: [
+                { validUntil: null },
+                { validUntil: { gte: new Date() } },
+              ],
             },
             orderBy: { validFrom: 'desc' },
             take: 1,
@@ -241,12 +235,10 @@ export const carsRouter = router({
           priceRules: {
             where: {
               isActive: true,
-              validUntil: {
-                OR: [
-                  { equals: null },
-                  { gte: new Date() },
-                ],
-              },
+              OR: [
+                { validUntil: null },
+                { validUntil: { gte: new Date() } },
+              ],
             },
             orderBy: { validFrom: 'desc' },
             take: 1,

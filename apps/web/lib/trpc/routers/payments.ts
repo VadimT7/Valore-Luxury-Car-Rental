@@ -6,7 +6,7 @@ import {
   attachPaymentMethod, 
   listPaymentMethods,
   setDefaultPaymentMethod 
-} from '@valore/lib/payments/stripe'
+} from '@valore/lib'
 
 export const paymentsRouter = router({
   // Create setup intent for saving payment methods

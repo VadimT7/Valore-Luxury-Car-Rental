@@ -21,9 +21,7 @@ export const createInnerTRPCContext = (opts: CreateContextOptions) => {
 /**
  * This is the actual context you'll use in your router.
  */
-export const createTRPCContext = async (opts: { req: Request }) => {
-  const { req } = opts
-
+export const createTRPCContext = async (_opts: { req: Request }) => {
   // Get the session from the server using the unstable_getServerSession wrapper
   const session = null // TODO: Implement getServerAuthSession
 

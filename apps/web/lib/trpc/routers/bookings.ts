@@ -2,10 +2,7 @@ import { z } from 'zod'
 import { router, publicProcedure, protectedProcedure } from '@valore/lib'
 import { prisma } from '@valore/database'
 import { TRPCError } from '@trpc/server'
-import { checkCarAvailability } from '@valore/lib/booking/availability'
-import { calculateBookingPrice } from '@valore/lib/pricing/calculator'
-import { createPaymentIntent, createSecurityDepositHold } from '@valore/lib/payments/stripe'
-import { sendBookingConfirmation, sendBookingConfirmationSMS } from '@valore/lib/notifications'
+import { checkCarAvailability, calculateBookingPrice, createPaymentIntent, createSecurityDepositHold, sendBookingConfirmation } from '@valore/lib'
 import { randomBytes } from 'crypto'
 
 const createBookingInput = z.object({
@@ -84,10 +81,42 @@ export const bookingsRouter = router({
       // Create booking in a transaction
       const booking = await prisma.$transaction(async (tx) => {
         // Create the booking
+        // For guest bookings, we need to create a guest user first
+        let userId = ctx.session?.user?.id;
+        
+        if (!userId && input.guestEmail) {
+          // Check if guest user already exists
+          const existingGuest = await tx.user.findUnique({
+            where: { email: input.guestEmail }
+          });
+          
+          if (existingGuest) {
+            userId = existingGuest.id;
+          } else {
+            // Create a guest user
+            const guestUser = await tx.user.create({
+              data: {
+                email: input.guestEmail,
+                name: input.guestName || 'Guest User',
+                role: 'CUSTOMER',
+                status: 'ACTIVE',
+              }
+            });
+            userId = guestUser.id;
+          }
+        }
+        
+        if (!userId) {
+          throw new TRPCError({
+            code: 'BAD_REQUEST',
+            message: 'User ID or guest email is required for booking'
+          });
+        }
+        
         const newBooking = await tx.booking.create({
           data: {
             bookingNumber,
-            userId: ctx.session?.user?.id,
+            userId,
             guestEmail: input.guestEmail,
             guestName: input.guestName,
             guestPhone: input.guestPhone,
@@ -316,9 +345,9 @@ export const bookingsRouter = router({
       let cancellationFee = 0
       
       if (hoursUntilPickup < 24) {
-        cancellationFee = booking.totalAmount * 0.5 // 50% fee
+        cancellationFee = Number(booking.totalAmount) * 0.5 // 50% fee
       } else if (hoursUntilPickup < 48) {
-        cancellationFee = booking.totalAmount * 0.25 // 25% fee
+        cancellationFee = Number(booking.totalAmount) * 0.25 // 25% fee
       }
       
       // Update booking status
@@ -348,7 +377,7 @@ export const bookingsRouter = router({
       return {
         booking: cancelledBooking,
         cancellationFee,
-        refundAmount: booking.totalAmount - cancellationFee,
+        refundAmount: Number(booking.totalAmount) - cancellationFee,
       }
     }),
 })

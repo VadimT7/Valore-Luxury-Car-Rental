@@ -1,9 +1,9 @@
 import Stripe from 'stripe'
-import { prisma, type Booking, type Payment, type User } from '@valore/database'
+import { prisma, type User } from '@valore/database'
 import Decimal from 'decimal.js'
 
 // Initialize Stripe
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || 'sk_test_dummy_key_for_build', {
   apiVersion: '2023-10-16',
   typescript: true,
 })
@@ -302,7 +302,7 @@ export async function handleStripeWebhook(
   payload: string | Buffer,
   signature: string
 ): Promise<void> {
-  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!
+  const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET || 'whsec_dummy_key_for_build'
   
   let event: Stripe.Event
   
