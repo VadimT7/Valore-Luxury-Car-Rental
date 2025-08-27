@@ -86,7 +86,8 @@ export function HeroSection() {
 
                 {/* Main heading */}
                 <motion.h1
-                  className="heading-hero text-white mb-8"
+                  className="font-display text-4xl sm:text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-light tracking-luxury uppercase text-white mb-8"
+                  style={{ lineHeight: '0.9' }}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.3 }}
