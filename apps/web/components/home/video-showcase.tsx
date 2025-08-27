@@ -96,20 +96,24 @@ export function VideoShowcase() {
           </motion.div>
         </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center mt-12"
-        >
+                 <motion.div
+           initial={{ opacity: 0, y: 20 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true }}
+           transition={{ duration: 0.6, delay: 0.6 }}
+           className="text-center mt-16"
+         >
           <a 
             href="https://www.instagram.com/valore.rental/" 
             target="_blank" 
             rel="noopener noreferrer"
           >
-            <Button>
-              <Play className="mr-2 h-4 w-4" />
+                                                                                                                                                                                                               <Button 
+                      size="xl" 
+                      className="min-w-[250px] h-15 px-9 bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white shadow-luxury hover:shadow-luxury-hover border-0 hover:scale-105 transition-all duration-300 [&>span]:text-base [&>span]:font-semibold"
+                      shimmer
+                      rightIcon={<Play className="h-4 w-4" />}
+                    >
               Watch More on Instagram
             </Button>
           </a>
