@@ -40,10 +40,10 @@ const carData = {
     category: 'SUPERCAR',
     pricePerDay: 550,
     images: [
-      'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1615397349754-cfa2066a298e?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop',
+      '/M8-Competition.jpg',
+      '/M8-Competition.jpg',
+      '/M8-Competition.jpg',
+      '/M8-Competition.jpg',
     ],
     specs: {
       power: '617 HP',
@@ -104,10 +104,10 @@ const carData = {
     category: 'COUPE',
     pricePerDay: 350,
     images: [
-      'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1615397349754-cfa2066a298e?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop',
+      '/AudiS5-1.png',
+      '/AudiS5-2.png',
+      '/AudiS5-1.png',
+      '/AudiS5-2.png',
     ],
     specs: {
       power: '349 HP',
@@ -168,10 +168,10 @@ const carData = {
     category: 'COUPE',
     pricePerDay: 450,
     images: [
-      'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1615397349754-cfa2066a298e?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop',
+      '/RS5-DarkBlue.jpg',
+      '/RS5-DarkBlue.jpg',
+      '/RS5-DarkBlue.jpg',
+      '/RS5-DarkBlue.jpg',
     ],
     specs: {
       power: '444 HP',
@@ -232,10 +232,10 @@ const carData = {
     category: 'SUV',
     pricePerDay: 800,
     images: [
-      'https://images.unsplash.com/photo-1615397349754-cfa2066a298e?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop',
+      '/G63.png',
+      '/G63.png',
+      '/G63.png',
+      '/G63.png',
     ],
     specs: {
       power: '577 HP',
@@ -296,10 +296,10 @@ const carData = {
     category: 'SUV',
     pricePerDay: 400,
     images: [
-      'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1615397349754-cfa2066a298e?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop',
+      '/BMW-X4M-Competition.jpg',
+      '/BMW-X4M-Competition.jpg',
+      '/BMW-X4M-Competition.jpg',
+      '/BMW-X4M-Competition.jpg',
     ],
     specs: {
       power: '503 HP',
@@ -360,10 +360,10 @@ const carData = {
     category: 'SEDAN',
     pricePerDay: 500,
     images: [
-      'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1615397349754-cfa2066a298e?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop',
+      '/RS7.jpg',
+      '/RS7.jpg',
+      '/RS7.jpg',
+      '/RS7.jpg',
     ],
     specs: {
       power: '591 HP',
@@ -424,10 +424,11 @@ const carData = {
     category: 'SUPERCAR',
     pricePerDay: 850,
     images: [
-      'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1592198084033-aade902d1aae?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1615397349754-cfa2066a298e?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop',
+      '/Lamborghini-Huracan-Blue-1.jpg',
+      '/Lamborghini-Huracan-Blue-2.jpg',
+      '/Lamborghini-Huracan-Blue-interior-1.jpg',
+      '/Lamborghini-Huracan-Blue-interior-2.jpeg',
+      '/Lamborghini-Huracan-Blue-interior-3.jpg',
     ],
     specs: {
       power: '610 HP',
@@ -580,7 +581,7 @@ export default function CarDetailPage() {
               </div>
               
               {/* Thumbnail Gallery */}
-              <div className="grid grid-cols-4 gap-2">
+              <div className="grid grid-cols-5 gap-2">
                 {car.images.map((image, index) => (
                   <button
                     key={index}
@@ -730,11 +731,26 @@ export default function CarDetailPage() {
                 {/* Quick Actions */}
                 <div className="space-y-3 mb-6">
                   <Link href={`/booking/${car.slug}?start=${selectedDates.start}&end=${selectedDates.end}`}>
-                    <Button className="w-full" size="lg">
-                      Book Now
+                    <Button 
+                      className="w-full bg-gradient-to-r from-primary via-primary/90 to-primary/80 hover:from-primary hover:via-primary/95 hover:to-primary text-white font-bold text-lg py-4 shadow-lg hover:shadow-2xl hover:shadow-primary/50 transform hover:scale-105 transition-all duration-300 border-0 relative overflow-hidden group" 
+                      size="lg"
+                    >
+                      {/* Glowing background effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 h-full"></div>
+                      
+                      {/* Inner glow effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-transparent to-primary/30 blur-sm group-hover:blur-md transition-all duration-300"></div>
+                      
+                      {/* Text with glow */}
+                      <span className="relative z-10 drop-shadow-lg group-hover:drop-shadow-2xl group-hover:drop-shadow-primary/50 transition-all duration-300">
+                        Book Now
+                      </span>
                     </Button>
                   </Link>
-                  <Button variant="outline" className="w-full">
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold py-3 transition-all duration-300"
+                  >
                     Check Availability
                   </Button>
                 </div>

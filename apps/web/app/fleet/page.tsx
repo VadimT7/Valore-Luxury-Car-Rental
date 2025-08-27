@@ -20,7 +20,7 @@ const allCars = [
     year: 2024,
     category: 'SUPERCAR',
     pricePerDay: 550,
-    image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
+    image: '/M8-Competition.jpg',
     specs: {
       power: '617 HP',
       acceleration: '3.2s',
@@ -40,7 +40,7 @@ const allCars = [
     year: 2024,
     category: 'COUPE',
     pricePerDay: 350,
-    image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
+    image: '/RS5-DarkBlue.jpg',
     specs: {
       power: '349 HP',
       acceleration: '4.4s',
@@ -60,7 +60,7 @@ const allCars = [
     year: 2024,
     category: 'COUPE',
     pricePerDay: 450,
-    image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
+    image: '/RS5-DarkBlue.jpg',
     specs: {
       power: '444 HP',
       acceleration: '3.9s',
@@ -80,7 +80,7 @@ const allCars = [
     year: 2024,
     category: 'SUV',
     pricePerDay: 800,
-    image: 'https://images.unsplash.com/photo-1615397349754-cfa2066a298e?w=800&h=600&fit=crop',
+    image: '/G63.png',
     specs: {
       power: '577 HP',
       acceleration: '4.5s',
@@ -100,7 +100,7 @@ const allCars = [
     year: 2024,
     category: 'SUV',
     pricePerDay: 400,
-    image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
+    image: '/BMW-X4M-Competition.jpg',
     specs: {
       power: '503 HP',
       acceleration: '4.1s',
@@ -120,7 +120,7 @@ const allCars = [
     year: 2024,
     category: 'SEDAN',
     pricePerDay: 500,
-    image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
+    image: '/RS7.jpg',
     specs: {
       power: '591 HP',
       acceleration: '3.6s',
@@ -140,7 +140,7 @@ const allCars = [
     year: 2024,
     category: 'SUPERCAR',
     pricePerDay: 850,
-    image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&h=600&fit=crop',
+    image: '/Lamborghini-Huracan-Blue-1.jpg',
     specs: {
       power: '610 HP',
       acceleration: '3.1s',
@@ -296,9 +296,9 @@ export default function FleetPage() {
                 >
                   {/* Image/Video */}
                   <div className={`relative overflow-hidden bg-gradient-to-br from-neutral-900 to-neutral-800 ${
-                    viewMode === 'list' ? 'w-64 h-48' : 'h-48'
+                    viewMode === 'list' ? 'w-64 h-64' : 'h-64'
                   }`}>
-                    {car.id === '4' ? (
+                    {car.id === '1' ? (
                       <video
                         autoPlay
                         loop
@@ -314,7 +314,7 @@ export default function FleetPage() {
                         src={car.image}
                         alt={car.displayName}
                         fill
-                        className="object-cover group-hover:scale-110 group-hover:brightness-110 transition-all duration-500"
+                        className="object-cover object-center group-hover:scale-110 group-hover:brightness-110 transition-all duration-500"
                       />
                     )}
                     
