@@ -19,7 +19,7 @@ const featuredCars = [
     year: 2024,
     category: 'SUPERCAR',
     pricePerDay: 550,
-    image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
+    image: '/M8-Competition.jpg',
     specs: {
       power: '617 HP',
       acceleration: '3.2s',
@@ -37,7 +37,7 @@ const featuredCars = [
     year: 2024,
     category: 'COUPE',
     pricePerDay: 350,
-    image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
+    image: '/AudiS5-1.png',
     specs: {
       power: '349 HP',
       acceleration: '4.4s',
@@ -55,7 +55,7 @@ const featuredCars = [
     year: 2024,
     category: 'COUPE',
     pricePerDay: 450,
-    image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
+    image: '/RS5-DarkBlue.jpg',
     specs: {
       power: '444 HP',
       acceleration: '3.9s',
@@ -73,7 +73,7 @@ const featuredCars = [
     year: 2024,
     category: 'SUV',
     pricePerDay: 800,
-    image: 'https://images.unsplash.com/photo-1615397349754-cfa2066a298e?w=800&h=600&fit=crop',
+    image: '/G63.png',
     specs: {
       power: '577 HP',
       acceleration: '4.5s',
@@ -91,7 +91,7 @@ const featuredCars = [
     year: 2024,
     category: 'SUV',
     pricePerDay: 400,
-    image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop',
+    image: '/BMW-X4M-Competition.jpg',
     specs: {
       power: '503 HP',
       acceleration: '4.1s',
@@ -109,7 +109,7 @@ const featuredCars = [
     year: 2024,
     category: 'SUPERCAR',
     pricePerDay: 850,
-    image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&h=600&fit=crop',
+    image: '/Lamborghini-Huracan-Blue-1.jpg',
     specs: {
       power: '610 HP',
       acceleration: '3.1s',
@@ -148,17 +148,17 @@ export function FeaturedFleet() {
             <Link href={`/cars/${car.slug}`}>
               <Card
                 hoverable
-                className="group overflow-hidden h-full"
+                className="group overflow-hidden h-full rounded-2xl shadow-luxury-lg hover:shadow-luxury-xl transition-all duration-500 border-0"
               >
                 {/* Image/Video */}
-                <div className="relative aspect-car overflow-hidden bg-gradient-to-br from-neutral-900 to-neutral-800">
-                  <Image
-                    src={car.id === '1' ? 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop' : car.image}
-                    alt={car.displayName}
-                    fill
-                    className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:brightness-110"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
+                <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-neutral-900 to-neutral-800 rounded-t-2xl">
+                                     <Image
+                     src={car.image}
+                     alt={car.displayName}
+                     fill
+                     className="object-cover object-center transition-all duration-700 group-hover:scale-105 group-hover:brightness-110"
+                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                   />
                   
                   {/* Luxury gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
@@ -169,47 +169,47 @@ export function FeaturedFleet() {
                   </div>
                   
                   {/* Price tag - Enhanced */}
-                  <div className="absolute top-4 right-4 bg-black/90 backdrop-blur-md px-4 py-2 rounded-xl border border-white/10 shadow-2xl">
-                    <p className="text-white font-mono font-bold">
-                      {formatCurrency(car.pricePerDay)}<span className="text-sm opacity-75 font-normal">/day</span>
+                  <div className="absolute top-6 right-6 bg-black/90 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/10 shadow-2xl">
+                    <p className="text-white font-mono font-bold text-sm">
+                      {formatCurrency(car.pricePerDay)}<span className="text-xs opacity-75 font-normal">/day</span>
                     </p>
                   </div>
                   
                   {/* Category badge - Enhanced */}
-                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/20 shadow-lg">
+                  <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/20 shadow-lg">
                     <p className="text-xs font-bold tracking-wider uppercase text-neutral-800">{car.category}</p>
                   </div>
 
                   {/* Rating badge */}
-                  <div className="absolute bottom-4 left-4 bg-primary/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-primary/20 shadow-lg">
-                    <div className="flex items-center gap-1">
-                      <Star className="h-3 w-3 text-white fill-white" />
+                  <div className="absolute bottom-6 left-6 bg-primary/90 backdrop-blur-md px-4 py-2 rounded-2xl border border-primary/20 shadow-lg">
+                    <div className="flex items-center gap-1.5">
+                      <Star className="h-3.5 w-3.5 text-white fill-white" />
                       <span className="text-xs font-bold text-white">{car.rating}</span>
                     </div>
                   </div>
                 </div>
 
                 {/* Content - Enhanced */}
-                <div className="p-6 bg-white">
+                <div className="p-6 bg-white rounded-b-2xl">
                   <div className="mb-6">
-                    <p className="text-sm text-neutral-500 mb-2 font-medium tracking-wide">{car.make}</p>
-                    <h3 className="text-2xl font-display font-bold text-neutral-900 mb-1">{car.model}</h3>
+                    <p className="text-sm text-neutral-500 mb-2 font-medium tracking-wide uppercase">{car.make}</p>
+                    <h3 className="text-xl font-display font-bold text-neutral-900 mb-1">{car.model}</h3>
                     <p className="text-sm text-neutral-500 font-medium">{car.year}</p>
                   </div>
 
                   {/* Specs - Enhanced */}
                   <div className="grid grid-cols-3 gap-4 mb-6 pb-6 border-b border-neutral-100">
                     <div className="text-center">
-                      <p className="text-xs text-neutral-500 mb-1 font-medium tracking-wide">Power</p>
-                      <p className="font-bold text-neutral-900">{car.specs.power}</p>
+                      <p className="text-xs text-neutral-500 mb-1 font-medium tracking-wide uppercase">Power</p>
+                      <p className="font-bold text-neutral-900 text-sm">{car.specs.power}</p>
                     </div>
                     <div className="text-center">
-                      <p className="text-xs text-neutral-500 mb-1 font-medium tracking-wide">0-100</p>
-                      <p className="font-bold text-neutral-900">{car.specs.acceleration}</p>
+                      <p className="text-xs text-neutral-500 mb-1 font-medium tracking-wide uppercase">0-100</p>
+                      <p className="font-bold text-neutral-900 text-sm">{car.specs.acceleration}</p>
                     </div>
                     <div className="text-center">
-                      <p className="text-xs text-neutral-500 mb-1 font-medium tracking-wide">Top Speed</p>
-                      <p className="font-bold text-neutral-900">{car.specs.topSpeed}</p>
+                      <p className="text-xs text-neutral-500 mb-1 font-medium tracking-wide uppercase">Top Speed</p>
+                      <p className="font-bold text-neutral-900 text-sm">{car.specs.topSpeed}</p>
                     </div>
                   </div>
 
@@ -219,8 +219,8 @@ export function FeaturedFleet() {
                       View Details
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1 duration-300" />
                     </div>
-                    <div className="w-8 h-8 bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100">
-                      <ArrowRight className="h-4 w-4 text-white" />
+                    <div className="w-8 h-8 bg-gradient-to-r from-primary to-primary/80 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-75 group-hover:scale-100 shadow-lg">
+                      <ArrowRight className="h-3 w-3 text-white" />
                     </div>
                   </div>
                 </div>
