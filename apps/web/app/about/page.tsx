@@ -16,6 +16,7 @@ import {
   Heart
 } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { Button } from '@valore/ui'
 import { staggerContainer, staggerItem } from '@valore/ui'
 
@@ -72,29 +73,29 @@ const team = [
 
 const milestones = [
   {
-    year: '2014',
-    title: 'Company Founded',
-    description: 'Started with a single Lamborghini in Montreal.',
-  },
-  {
-    year: '2016',
-    title: 'Fleet Expansion',
-    description: 'Grew to 10 luxury vehicles and opened first showroom.',
-  },
-  {
-    year: '2019',
-    title: 'Premium Service Launch',
-    description: 'Introduced 24/7 concierge service and nationwide delivery.',
-  },
-  {
     year: '2022',
-    title: 'Industry Recognition',
-    description: 'Awarded "Best Luxury Car Rental" in Quebec.',
+    title: 'Company Founded',
+    description: 'Started with a single Lamborghini in Montreal, establishing Valore Rental as the premier luxury car rental service.',
+  },
+  {
+    year: '2023',
+    title: 'Fleet Expansion & Showroom',
+    description: 'Grew to 15 luxury vehicles and opened our first state-of-the-art showroom in downtown Montreal.',
   },
   {
     year: '2024',
-    title: 'Digital Innovation',
-    description: 'Launched advanced booking platform and mobile app.',
+    title: 'Premium Service Launch',
+    description: 'Introduced 24/7 concierge service, nationwide delivery, and launched our advanced booking platform.',
+  },
+  {
+    year: '2024',
+    title: 'Industry Recognition',
+    description: 'Awarded "Best Luxury Car Rental" in Quebec and "Excellence in Customer Service" by the Canadian Tourism Board.',
+  },
+  {
+    year: '2025',
+    title: 'Digital Innovation & Expansion',
+    description: 'Launched mobile app, introduced AI-powered vehicle recommendations, and expanded to serve all major Canadian cities.',
   },
 ]
 
@@ -115,7 +116,7 @@ export default function AboutPage() {
             <h1 className="heading-large text-white mb-4">About Valore Rental</h1>
             <p className="text-xl text-neutral-300 max-w-3xl mx-auto font-light">
               Montreal's premier luxury car rental service, delivering exceptional experiences 
-              with the world's most prestigious vehicles since 2014.
+              with the world's most prestigious vehicles since 2022.
             </p>
           </motion.div>
         </div>
@@ -157,7 +158,7 @@ export default function AboutPage() {
               <h2 className="heading-medium text-slate-900 mb-6">Our Story</h2>
               <div className="space-y-4 text-slate-600 leading-relaxed">
                 <p>
-                  Founded in 2014 in the heart of Montreal, Valore Rental began with a simple vision: 
+                  Founded in 2022 in the heart of Montreal, Valore Rental began with a simple vision: 
                   to make luxury automotive experiences accessible to discerning clients who appreciate 
                   the finest things in life.
                 </p>
@@ -300,7 +301,7 @@ export default function AboutPage() {
           >
             <h2 className="heading-medium text-slate-900 mb-4">Our Journey</h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              A decade of growth, innovation, and excellence in luxury car rental.
+              A journey of growth, innovation, and excellence in luxury car rental from 2022 to today.
             </p>
           </motion.div>
 
@@ -356,12 +357,16 @@ export default function AboutPage() {
               Book your luxury vehicle today and discover why we're Montreal's premier choice.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white hover:bg-slate-100 text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                Explore Our Fleet
-              </Button>
-              <Button size="lg" className="border-2 border-white text-white hover:bg-white hover:text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
-                Contact Us
-              </Button>
+              <Link href="/fleet">
+                <Button size="lg" className="bg-white hover:bg-slate-100 text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                  Explore Our Fleet
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button size="lg" className="border-2 border-white text-white hover:bg-white hover:text-black font-semibold shadow-lg hover:shadow-xl transition-all duration-300">
+                  Contact Us
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>
