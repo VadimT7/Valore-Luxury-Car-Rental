@@ -105,7 +105,7 @@ export function ExperienceSection() {
               transition={{ delay: 0.4, duration: 0.6 }}
               className="absolute -bottom-8 -left-8 bg-white text-black p-6 rounded-xl shadow-luxury-lg max-w-xs"
             >
-              <p className="text-4xl font-display mb-2">15+</p>
+              <p className="text-4xl font-display mb-2">3+</p>
               <p className="text-sm text-neutral-600">Years of Excellence</p>
               <p className="text-sm text-neutral-600">Serving Discerning Clients Worldwide</p>
             </motion.div>
